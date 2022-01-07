@@ -1,0 +1,94 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "onApprovalReceived",
+				"outputs": [
+					{
+						"internalType": "bytes4",
+						"name": "",
+						"type": "bytes4"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Vittorio Minacori (https://github.com/vittominacori)",
+			"details": "Interface for any contract that wants to support approveAndCall  from ERC1363 token contracts as defined in  https://eips.ethereum.org/EIPS/eip-1363",
+			"kind": "dev",
+			"methods": {
+				"onApprovalReceived(address,uint256,bytes)": {
+					"details": "Any ERC1363 smart contract calls this function on the recipient after an `approve`. This function MAY throw to revert and reject the approval. Return of other than the magic value MUST result in the transaction being reverted. Note: the token contract address is always the message sender.",
+					"params": {
+						"amount": "uint256 The amount of tokens to be spent",
+						"data": "bytes Additional data with no specified format",
+						"sender": "address The address which called `approveAndCall` function"
+					},
+					"returns": {
+						"_0": "`bytes4(keccak256(\"onApprovalReceived(address,uint256,bytes)\"))` unless throwing"
+					}
+				}
+			},
+			"title": "IERC1363Spender Interface",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onApprovalReceived(address,uint256,bytes)": {
+					"notice": "Handle the approval of ERC1363 tokens"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contract.sol": "IERC1363Spender"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contract.sol": {
+			"keccak256": "0x59a5c5a2ad789bb41d11095ef60cc1b81216f2331ed1b611c0a8099107864a5f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8e890d2e5bf4728bfd3ed4a8921f80be70e69416a16b16052ccfe5b2810e08e7",
+				"dweb:/ipfs/QmP9Uz7G16qRaDApkuGzPtmk93TQE1tBpTVSgKz5wD2sLF"
+			]
+		}
+	},
+	"version": 1
+}
